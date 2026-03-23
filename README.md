@@ -153,7 +153,7 @@ Please use 2 Database Views from Exercise #00 and write SQL to get female and ma
 | Language                        | ANSI SQL                                                                                              |
 | SQL Syntax Construction                        | `generate_series(...)`                                                                                              |
 
-Please create a Database View (with name `v_generated_dates`) which should "store" generated dates from January 1st to January 31st, 2022 in type DATE. Don't forget the order of the generated_date column.
+Please create a Database View (with name `v_generated_dates`) which should return generated dates from January 1st to January 31st, 2022 in type DATE. Don't forget the order of the generated_date column.
 
 | generated_date |
 | ------ |
