@@ -31,22 +31,6 @@ Views and materialized views for simplifying complex queries and optimizing perf
 | ex07 | VIEW with INSTEAD OF triggers |
 | ex08 | Hierarchical VIEWs |
 
-### 🚀 Quick Start
-
-```sql
--- Materialized view for visit statistics
-CREATE MATERIALIZED VIEW visit_stats AS
-SELECT 
-    p.name as person_name,
-    piz.name as pizzeria_name,
-    COUNT(*) as visit_count
-FROM person_visits pv
-JOIN person p ON pv.person_id = p.id
-JOIN pizzeria piz ON pv.pizzeria_id = piz.id
-GROUP BY p.name, piz.name;
-
-REFRESH MATERIALIZED VIEW visit_stats;
-```
 
 ---
 
@@ -77,22 +61,6 @@ REFRESH MATERIALIZED VIEW visit_stats;
 | ex07 | VIEW с INSTEAD OF триггерами |
 | ex08 | Иерархические VIEW |
 
-### 🚀 Быстрый старт
-
-```sql
--- Материализованное представление для статистики посещений
-CREATE MATERIALIZED VIEW visit_stats AS
-SELECT 
-    p.name as person_name,
-    piz.name as pizzeria_name,
-    COUNT(*) as visit_count
-FROM person_visits pv
-JOIN person p ON pv.person_id = p.id
-JOIN pizzeria piz ON pv.pizzeria_id = piz.id
-GROUP BY p.name, piz.name;
-
-REFRESH MATERIALIZED VIEW visit_stats;
-```
 
 ---
 
