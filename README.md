@@ -19,11 +19,34 @@ Views and materialized views for simplifying complex queries and optimizing perf
 
 ### ✨ Features
 
-| Exercise | Topic |\n|----------|-------|\n| ex00 | Simple VIEW |\n| ex01 | VIEW with JOIN |\n| ex02 | VIEW with aggregates |\n| ex03 | MATERIALIZED VIEW |\n| ex04 | REFRESH MATERIALIZED VIEW |\n| ex05 | VIEW with CHECK OPTION |\n| ex06 | VIEW with SECURITY BARRIER |\n| ex07 | VIEW with INSTEAD OF triggers |\n| ex08 | Hierarchical VIEWs |
+| Exercise | Topic |
+|----------|-------|
+| ex00 | Simple VIEW |
+| ex01 | VIEW with JOIN |
+| ex02 | VIEW with aggregates |
+| ex03 | MATERIALIZED VIEW |
+| ex04 | REFRESH MATERIALIZED VIEW |
+| ex05 | VIEW with CHECK OPTION |
+| ex06 | VIEW with SECURITY BARRIER |
+| ex07 | VIEW with INSTEAD OF triggers |
+| ex08 | Hierarchical VIEWs |
 
 ### 🚀 Quick Start
 
-```sql\n-- Materialized view for visit statistics\nCREATE MATERIALIZED VIEW visit_stats AS\nSELECT \n    p.name as person_name,\n    piz.name as pizzeria_name,\n    COUNT(*) as visit_count\nFROM person_visits pv\nJOIN person p ON pv.person_id = p.id\nJOIN pizzeria piz ON pv.pizzeria_id = piz.id\nGROUP BY p.name, piz.name;\n\nREFRESH MATERIALIZED VIEW visit_stats;\n```
+```sql
+-- Materialized view for visit statistics
+CREATE MATERIALIZED VIEW visit_stats AS
+SELECT 
+    p.name as person_name,
+    piz.name as pizzeria_name,
+    COUNT(*) as visit_count
+FROM person_visits pv
+JOIN person p ON pv.person_id = p.id
+JOIN pizzeria piz ON pv.pizzeria_id = piz.id
+GROUP BY p.name, piz.name;
+
+REFRESH MATERIALIZED VIEW visit_stats;
+```
 
 ---
 
@@ -42,11 +65,34 @@ Views and materialized views for simplifying complex queries and optimizing perf
 
 ### ✨ Возможности
 
-| Задача | Тема |\n|--------|------|\n| ex00 | Простое VIEW |\n| ex01 | VIEW с JOIN |\n| ex02 | VIEW с агрегатами |\n| ex03 | MATERIALIZED VIEW |\n| ex04 | REFRESH MATERIALIZED VIEW |\n| ex05 | VIEW с CHECK OPTION |\n| ex06 | VIEW с SECURITY BARRIER |\n| ex07 | VIEW с INSTEAD OF триггерами |\n| ex08 | Иерархические VIEW |
+| Задача | Тема |
+|--------|------|
+| ex00 | Простое VIEW |
+| ex01 | VIEW с JOIN |
+| ex02 | VIEW с агрегатами |
+| ex03 | MATERIALIZED VIEW |
+| ex04 | REFRESH MATERIALIZED VIEW |
+| ex05 | VIEW с CHECK OPTION |
+| ex06 | VIEW с SECURITY BARRIER |
+| ex07 | VIEW с INSTEAD OF триггерами |
+| ex08 | Иерархические VIEW |
 
 ### 🚀 Быстрый старт
 
-```sql\n-- Материализованное представление для статистики посещений\nCREATE MATERIALIZED VIEW visit_stats AS\nSELECT \n    p.name as person_name,\n    piz.name as pizzeria_name,\n    COUNT(*) as visit_count\nFROM person_visits pv\nJOIN person p ON pv.person_id = p.id\nJOIN pizzeria piz ON pv.pizzeria_id = piz.id\nGROUP BY p.name, piz.name;\n\nREFRESH MATERIALIZED VIEW visit_stats;\n```
+```sql
+-- Материализованное представление для статистики посещений
+CREATE MATERIALIZED VIEW visit_stats AS
+SELECT 
+    p.name as person_name,
+    piz.name as pizzeria_name,
+    COUNT(*) as visit_count
+FROM person_visits pv
+JOIN person p ON pv.person_id = p.id
+JOIN pizzeria piz ON pv.pizzeria_id = piz.id
+GROUP BY p.name, piz.name;
+
+REFRESH MATERIALIZED VIEW visit_stats;
+```
 
 ---
 
